@@ -114,7 +114,7 @@ nav a {
         margin-bottom: 6px;
     }
     header h1 {
-        font-size: 1.35rem;
+        font-size: 1.15rem;
         letter-spacing: 0.5px;
         margin: 0 0 6px 0;
         text-align: center;
@@ -128,7 +128,7 @@ nav a {
     }
     nav a {
         font-size: 1rem;
-        padding: 10px 0;
+        padding: 8px 12px;
         width: 100%;
         display: block;
         border-radius: var(--radius);
