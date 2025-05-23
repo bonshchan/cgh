@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book an Appointment - Candon General Hospital</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #27ae60;
+      --secondary: #2ecc71;
+      --light: #ffffff;
+      --dark: #222f3e;
+      --gray: #b2bec3;
+      --radius: 22px;
+      --shadow: 0 8px 24px rgba(39, 174, 96, 0.08);
+      --transition-speed: 0.3s;
+      --transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.8rem;
+      border-radius: 0 0 var(--radius) var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    main {
+      flex-grow: 1;
+      max-width: 600px;
+      margin: 40px auto;
+      background: var(--light);
+      padding: 40px 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: var(--primary);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: block;
+      color: var(--dark);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="time"],
+    select,
+    textarea {
+      padding: 12px 15px;
+      border: 1.5px solid #e5e7eb;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      transition: border var(--transition-speed) var(--transition-ease),
+                  box-shadow var(--transition-speed) var(--transition-ease);
+      width: 100%;
+      font-family: inherit;
+      resize: vertical;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="date"]:focus,
+    input[type="time"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--primary);
+      outline: none;
+      box-shadow: 0 0 8px var(--primary);
+    }
+
+    textarea {
+      min-height: 100px;
+    }
+
+    .btn-submit {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 1.1rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-weight: 700;
+      transition: background var(--transition-speed) var(--transition-ease),
+                  box-shadow var(--transition-speed) var(--transition-ease);
+    }
+
+    .btn-submit:hover,
+    .btn-submit:focus {
+      background: var(--secondary);
+      box-shadow: 0 4px 16px rgba(39, 174, 96, 0.4);
+      outline: none;
+    }
+
+    .success-message {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      padding: 15px;
+      border-radius: var(--radius);
+      margin-top: 20px;
+      display: none;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    @media (max-width: 640px) {
+      main {
+        margin: 20px 15px;
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  Candon General Hospital - Book an Appointment
+</header>
+
+<main>
+  <h1>Book an Appointment</h1>
+  <form id="appointmentForm" novalidate>
+    <label for="fullName">Full Name *</label>
+    <input type="text" id="fullName" name="fullName" placeholder="Your full name" required />
+
+    <label for="email">Email Address *</label>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+    <label for="phone">Phone Number *</label>
+    <input type="tel" id="phone" name="phone" placeholder="+63 912 345 6789" required pattern="^\+?\d{7,15}$" />
+
+    <label for="service">Select Service *</label>
+    <select id="service" name="service" required>
+      <option value="" disabled selected>Select a service</option>
+      <option value="general-medicine">Pediatrics</option>
+      <option value="cardiology">Cardiology</option>
+      <option value="maternity">Maternity</option>
+      <option value="vaccinations">Vaccinations</option>
+    </select>
+
+    <label for="date">Preferred Date *</label>
+    <input type="date" id="date" name="date" required min="" />
+
+    <label for="time">Preferred Time *</label>
+    <input type="time" id="time" name="time" required />
+
+    <label for="notes">Additional Notes</label>
+    <textarea id="notes" name="notes" placeholder="Any special requests or information"></textarea>
+
+    <button type="submit" class="btn-submit">Submit Appointment</button>
+  </form>
+
+  <div class="success-message" id="successMessage">
+    Thank you! Your appointment request has been received. We will contact you shortly.
+  </div>
+</main>
+
+<script>
+  // Set min date to today for date input
+  const dateInput = document.getElementById('date');
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.setAttribute('min', today);
+
+  const form = document.getElementById('appointmentForm');
+  const successMessage = document.getElementById('successMessage');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    // Here you would normally send data to backend via fetch/AJAX
+    // For demo, just show success message and reset form
+
+    successMessage.style.display = 'block';
+    form.reset();
+
+    // Hide message after 5 seconds
+    setTimeout(() => {
+      successMessage.style.display = 'none';
+    }, 5000);
+  });
+</script>
+
+</body>
+</html>

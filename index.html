@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candon General Hospital</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+  <div class="container header-content">
+  <a href="index.html">
+    <img src="img/CGH LOGO.png" alt="Candon General Hospital Logo" class="logo" />
+  </a>
+    <h1>Candon General Hospital</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#facilities">Facilities</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Welcome to Candon General Hospital</h2>
+            <p>Your health, our priority. Discover our world-class facilities and comprehensive services.</p>
+            <a href="#services" class="btn">View Services</a>
+        </div>
+    </section>
+    <section id="facilities">
+        <div class="container">
+            <h2>Our Facilities</h2>
+            <div class="facilities-list">
+                <div class="facility-card">
+                    <i class="fas fa-procedures"></i>
+                    <h3>Inpatient Rooms</h3>
+                    <p>Comfortable, private rooms with 24/7 nursing care and modern amenities.</p>
+                </div>
+                <div class="facility-card">
+                    <i class="fas fa-ambulance"></i>
+                    <h3>Emergency Department</h3>
+                    <p>State-of-the-art ER with rapid response teams available around the clock.</p>
+                </div>
+                <div class="facility-card">
+                    <i class="fas fa-x-ray"></i>
+                    <h3>Imaging Center</h3>
+                    <p>Advanced MRI, CT, and X-ray equipment for accurate diagnostics.</p>
+                </div>
+                <div class="facility-card">
+                    <i class="fas fa-flask"></i>
+                    <h3>Laboratory</h3>
+                    <p>Onsite lab for fast and reliable test results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            
+			
+			
+			<div class="services-list">
+
+  <!-- General Medicine -->
+  <div class="service-card" id="generalMedicineCard" tabindex="0" role="button" aria-pressed="false">
+    <i class="fas fa-user-md"></i>
+    <h3>Pediatrics</h3>
+    <p>Comprehensive care for adults and children by experienced physicians.</p>
+  </div>
+  <div id="modalGeneralMedicine" class="modal">
+    <div class="modal-content">
+      <span class="close-button" data-modal="modalGeneralMedicine">&times;</span>
+      <img src="doctor-gm.jpg" alt="Dr. Jane Smith" class="profile-img" />
+      <h2>Dr. Shirley Gacusan</h2>
+      <p class="title"><b>Pediatrician</b></p>
+      <p>Experienced physician with over 15 years of practice in adult and pediatric care.</p>
+      <p><strong>Qualifications:</strong> MD, Internal Medicine</p>
+      <p><strong>Contact:</strong> candongeneralhospital@gmail.com | +1 234 567 890</p>
+      <a href="appointment.html" class="btn">Book Appointment</a>
+    </div>
+  </div>
+
+  <!-- Cardiology -->
+  <div class="service-card" id="cardiologyCard" tabindex="0" role="button" aria-pressed="false">
+    <i class="fas fa-heartbeat"></i>
+    <h3>Cardiology</h3>
+    <p>Heart health screening, diagnosis, and advanced cardiac treatments.</p>
+  </div>
+  <div id="modalCardiology" class="modal">
+    <div class="modal-content">
+      <span class="close-button" data-modal="modalCardiology">&times;</span>
+      <img src="doctor-cardiology.jpg" alt="Dr. John Heart" class="profile-img" />
+      <h2>Dr. John Heart</h2>
+      <p class="title">Cardiologist</p>
+      <p>Expert in advanced cardiac treatments and heart health screening.</p>
+      <p><strong>Qualifications:</strong> MD, Cardiology</p>
+      <p><strong>Contact:</strong> john.heart@candonhospital.com | +1 234 567 891</p>
+      <a href="appointment.html" class="btn">Book Appointment</a>
+    </div>
+  </div>
+
+  <!-- Maternity -->
+  <div class="service-card" id="maternityCard" tabindex="0" role="button" aria-pressed="false">
+    <i class="fas fa-baby"></i>
+    <h3>Maternity</h3>
+    <p>Personalized prenatal, delivery, and postnatal care for mothers and babies.</p>
+  </div>
+  <div id="modalMaternity" class="modal">
+    <div class="modal-content">
+      <span class="close-button" data-modal="modalMaternity">&times;</span>
+      <img src="doctor-maternity.jpg" alt="Dr. Mary Birth" class="profile-img" />
+      <h2>Dr. Mary Birth</h2>
+      <p class="title">Obstetrician & Gynecologist</p>
+      <p>Caring for mothers and babies from pregnancy to delivery and beyond.</p>
+      <p><strong>Qualifications:</strong> MD, OB-GYN</p>
+      <p><strong>Contact:</strong> mary.birth@candonhospital.com | +1 234 567 892</p>
+      <a href="appointment.html" class="btn">Book Appointment</a>
+    </div>
+  </div>
+
+  <!-- Vaccinations -->
+  <div class="service-card" id="vaccinationsCard" tabindex="0" role="button" aria-pressed="false">
+    <i class="fas fa-syringe"></i>
+    <h3>Vaccinations</h3>
+    <p>Routine immunizations for children and adults.</p>
+  </div>
+  <div id="modalVaccinations" class="modal">
+    <div class="modal-content">
+      <span class="close-button" data-modal="modalVaccinations">&times;</span>
+      <img src="doctor-vaccinations.jpg" alt="Dr. Victor Vax" class="profile-img" />
+      <h2>Dr. Victor Vax</h2>
+      <p class="title">Immunization Specialist</p>
+      <p>Providing safe and effective vaccinations for all ages.</p>
+      <p><strong>Qualifications:</strong> MD, Pediatrics</p>
+      <p><strong>Contact:</strong> victor.vax@candonhospital.com | +1 234 567 893</p>
+      <a href="appointment.html" class="btn">Book Appointment</a>
+    </div>
+  </div>
+
+</div>
+
+			
+			
+    </section>
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+                <p id="formMsg"></p>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Candon General Hospital. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
