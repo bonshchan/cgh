@@ -98,44 +98,95 @@ nav a {
     user-select: none;
 }
 
-/* MOBILE HEADER IMPROVEMENTS 
+/* MOBILE HEADER - HORIZONTAL LAYOUT */
 @media (max-width: 700px) {
     header {
-        padding: 12px 0;
+        padding: 16px 0;
     }
+    
     header .container {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        gap: 10px;
-        text-align: center;
+        gap: 12px;
+        padding: 0 16px;
     }
+    
     header .logo {
-        height: 42px;
-        margin-bottom: 6px;
+        height: 36px;
+        margin-bottom: 0;
     }
+    
     header h1 {
-        font-size: 1.15rem;
+        font-size: 1.2rem;
         letter-spacing: 0.5px;
-        margin: 0 0 6px 0;
-        text-align: center;
-        line-height: 1.2;
+        margin: 0;
+        text-align: left;
+        white-space: nowrap;
     }
+    
     nav ul {
-        flex-direction: column;
+        flex-direction: row;
         gap: 8px;
-        width: 100%;
-        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-end;
     }
+    
     nav a {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+        width: auto;
+        display: inline-block;
+        border-radius: 16px;
+    }
+    
+    /* Adjust hero section for mobile */
+    .hero {
+        padding: 60px 0 40px 0;
+        margin: 16px 0;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
         font-size: 1rem;
-        padding: 8px 12px;
-        width: 100%;
-        display: block;
-        border-radius: var(--radius);
+        padding: 0 16px;
+    }
+    
+    /* Make buttons slightly smaller on mobile */
+    .btn {
+        padding: 12px 28px;
+        font-size: 1rem;
     }
 }
 
-*/
+/* For very small screens (e.g., iPhone SE) */
+@media (max-width: 400px) {
+    header h1 {
+        font-size: 1rem;
+    }
+    
+    nav a {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+    
+    /* Stack logo and title if space is really tight */
+    header .container {
+        flex-wrap: wrap;
+        row-gap: 8px;
+    }
+    
+    /* Give more space for navigation */
+    nav {
+        width: 100%;
+    }
+    
+    nav ul {
+        justify-content: space-between;
+    }
+}
 
 
 nav a:hover,
