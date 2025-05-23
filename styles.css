@@ -98,46 +98,71 @@ nav a {
     user-select: none;
 }
 
-/* MOBILE HEADER - HORIZONTAL LAYOUT */
+
+
+/* DESKTOP STICKY HEADER */
+@media (min-width: 701px) {
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1100;
+    }
+}
+
+/* MOBILE NON-STICKY HEADER */
 @media (max-width: 700px) {
     header {
-        padding: 16px 0;
+        position: static; /* Remove sticky positioning */
+        top: auto;
+        z-index: auto;
+        padding: 12px 0;
     }
-    
+
     header .container {
-        flex-direction: row;
-        align-items: center;
-        gap: 12px;
+        flex-wrap: nowrap;
         padding: 0 16px;
     }
-    
-    header .logo {
-        height: 36px;
-        margin-bottom: 0;
+
+    header h1 {
+        font-size: 1.1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    nav ul {
+        gap: 6px;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+
+    /* Ensure logo doesn't push layout */
+    .logo {
+        height: 32px !important;
+    }
+
+    /* Hide shadow interactions on mobile */
+    header:hover,
+    header:focus-within {
+        box-shadow: none;
+    }
+}
+
+/* VERY SMALL SCREENS ADJUSTMENT */
+@media (max-width: 400px) {
+    nav a {
+        font-size: 0.7rem;
+        padding: 4px 8px;
     }
     
     header h1 {
-        font-size: 1.2rem;
-        letter-spacing: 0.5px;
-        margin: 0;
-        text-align: left;
-        white-space: nowrap;
+        font-size: 1rem;
     }
-    
-    nav ul {
-        flex-direction: row;
-        gap: 8px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-    }
-    
-    nav a {
-        font-size: 0.85rem;
-        padding: 6px 10px;
-        width: auto;
-        display: inline-block;
-        border-radius: 16px;
-    }
+}
+
     
     /* Adjust hero section for mobile */
     .hero {
