@@ -239,12 +239,20 @@ nav a:focus-visible {
 }
 
 .hero h2 {
-    font-size: 2.8rem;
-    margin-bottom: 18px;
-    font-weight: 800;
-    color: var(--primary);
-    text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    font-size: 3.2rem; /* Larger text */
+    font-weight: 900;
+    color: #fff; /* White text for maximum contrast */
+    background: rgba(63, 125, 88, 0.85); /* Strong green overlay */
+    padding: 24px 48px;
+    border-radius: 32px;
+    display: inline-block;
+    box-shadow: 0 8px 32px rgba(39, 174, 96, 0.25);
+    text-shadow: 0 4px 24px rgba(34, 47, 62, 0.35), 0 1px 2px rgba(0,0,0,0.18);
+    margin-bottom: 24px;
+    letter-spacing: 1.5px;
+    transition: background 0.3s, color 0.3s;
 }
+
 
 .hero p {
     font-size: 1.3rem;
